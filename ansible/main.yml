@@ -1,0 +1,14 @@
+---
+- hosts: all
+  tasks:
+    - name: "Instalar MySQL"
+      apt:
+        name: "mysql-server-5.7"
+      become: yes
+      
+    - name: "Rodar Service MySQL"
+      service:
+        name: mysql
+        state: started
+        enabled: True
+      become: yes
